@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: Spring Batch Essentials
+  datasource:
+    url: jdbc:h2:mem:customers-db
+  h2:
+    console:
+      enabled: true
+  batch:
+    job:
+      enabled: false
+  jpa:
+    show-sql: true
+server:
+  port: 8082

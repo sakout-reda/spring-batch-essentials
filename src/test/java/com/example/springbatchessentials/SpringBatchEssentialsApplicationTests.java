@@ -3,11 +3,29 @@ package com.example.springbatchessentials;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+
+//@SpringBootTest
 class SpringBatchEssentialsApplicationTests {
 
+
+    Calculator underTest=new Calculator();
     @Test
-    void contextLoads() {
+    void shouldAddNumbers() {
+        // Given
+        int a=20;
+        int b=31;
+        // When
+        int result= underTest.add(a,b);
+        // Then
+        int expected=51;
+        assertThat(result).isEqualTo(expected);
+    }
+
+    class Calculator {
+        int add(int a , int b) {
+            return a + b;
+        }
     }
 
 }
